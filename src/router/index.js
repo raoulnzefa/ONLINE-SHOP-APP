@@ -1,18 +1,36 @@
 import Vue from 'vue'
 import VueRouter from 'vue-router'
 import store from './../store/index'
-//import Shops from '../views/Shops.vue'
-import Home from '../views/Home.vue'
+import Shops from '../views/Shops.vue'
 import Login from '../views/Login.vue'
 import Register from '../views/Register.vue'
+import AllManagers from '../views/AllManagers.vue'
+import SingleManager from '../views/SingleManager.vue'
+import SingleShop from '../views/SingleShop.vue'
 
 Vue.use(VueRouter)
 
 const routes = [
   {
     path: '/',
-    name: 'home',
-    component: Home,
+    name: 'shops',
+    component: Shops,
+    meta: { guest: true }
+  },
+  {
+    path: '/shops/:id',
+    name: 'shop',
+    component: SingleShop,
+  },
+  {
+    path: '/managers',
+    name: 'managers',
+    component: AllManagers,
+  },
+  {
+    path: '/managers/:id',
+    name: 'manager',
+    component: SingleManager,
   },
   {
     path: '/login',

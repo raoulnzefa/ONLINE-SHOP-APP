@@ -19,7 +19,7 @@
         <small id="inputRegisterPasswordHelpBlock" class="form-text text-muted mb-4">
             Must be at least 8 characters and 1 number
         </small>
-        <input type="password" id="inputRegisterPassword" name="password_confirmation" class="form-control" placeholder="Confirm" v-model="form.password_confirm" required>
+        <input type="password" id="inputRegisterPasswordConfirm" name="password_confirmation" class="form-control" placeholder="Confirm" v-model="form.password_confirm" required>
         <small id="inputRegisterConfirmPasswordHelpBlock" class="form-text text-muted mb-4">
             Confirm password
         </small>
