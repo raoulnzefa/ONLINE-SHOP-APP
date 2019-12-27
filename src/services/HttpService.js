@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const BASE_URL = 'http://localhost:8000/api'
+const BASE_URL = axios.defaults.baseURL = 'http://localhost:8000/api'
 
 export class HttpService {
     constructor() {
@@ -8,7 +8,7 @@ export class HttpService {
             BASE_URL,
             {
                 accept: 'application/json',
-                authorization: `Bearer ${ localStorage.getItem('token') }`
+                Authorization: `Bearer ${ localStorage.getItem('token') }`
             }
         )
         this.axios = axios
@@ -18,6 +18,6 @@ export class HttpService {
         axios.defaults.baseURL = baseUrl
     }
     setHeaders(headers) {
-        axios.defaults.authorization = headers
+        axios.defaults.headers = headers
     }
 }
