@@ -15,7 +15,6 @@
         </div>
         <p v-else>Manager Required</p>
       </div>
-      <router-link class="nav-link" to="/">Back to all shops</router-link>
     </div>
   </div>
 </template>

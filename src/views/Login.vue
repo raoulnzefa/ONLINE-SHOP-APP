@@ -1,6 +1,6 @@
 <template>
-  <div class="container mt-5">
-
+  <div class="mt-5 login-card">
+    <div class="mt-5 card">
     <form class="form-signin" @submit.prevent="submit">
       <h1 class="h3 mb-3 font-weight-normal">Please sign in</h1>
       <div class="alert alert-danger" role="alert" v-if="loginErrors">
@@ -10,8 +10,9 @@
       <input type="email" id="inputEmail" class="form-control" placeholder="Email address" required="" autofocus="" v-model="email">
       <label for="inputPassword" class="sr-only">Password</label>
       <input type="password" id="inputPassword" class="form-control" placeholder="Password" required="" v-model="password">
-      <button class="btn btn-lg btn-primary btn-block login" type="submit">Sign in</button>
+      <button class="btn btn-lg btn-primary" type="submit">Sign in</button>
     </form>
+    </div>
 </div>  
 </template>
 
@@ -53,9 +54,17 @@ export default {
   padding:10px;
 }
 .form-control {
-  margin:20px;
+  margin:10px;
 }
 .login {
   margin:20px;
+}
+.login-card {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+  }
+.form-control {
+    width: auto;
 }
 </style>

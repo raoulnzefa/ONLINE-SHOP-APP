@@ -7,6 +7,8 @@ import Register from '../views/Register.vue'
 import AllManagers from '../views/AllManagers.vue'
 import SingleManager from '../views/SingleManager.vue'
 import SingleShop from '../views/SingleShop.vue'
+import MyShop from '../views/MyShop.vue'
+import AddShop from '../views/AddShop.vue'
 
 Vue.use(VueRouter)
 
@@ -21,6 +23,16 @@ const routes = [
     path: '/shops/:id',
     name: 'shop',
     component: SingleShop,
+  },
+  {
+    path: '/my-shop',
+    name: 'my-shop',
+    component: MyShop,
+  },
+  {
+    path: '/shop/create',
+    name: 'add-shop',
+    component: AddShop,
   },
   {
     path: '/managers',

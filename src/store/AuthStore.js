@@ -1,10 +1,10 @@
-import {authService } from './../services/AuthService'
+import { authService } from './../services/AuthService'
 
 export const AuthModule = {
     state: {
         token: localStorage.getItem('token'),
         errors: null,
-        registerErrors: {email: '', password: ''},
+        registerErrors: { email: '', password: '' },
         user: localStorage.getItem('user')
     },
 
@@ -25,7 +25,7 @@ export const AuthModule = {
     },
 
     actions: {
-        async login(context, {email, password}) {
+        async login(context, { email, password }) {
             try {
                 const response = await authService.login(email, password)
                 context.commit('setToken', response.data.token)
@@ -36,7 +36,7 @@ export const AuthModule = {
                     Authorization: `Bearer ${response.data.token}`
                 })
                 localStorage.setItem('token', response.data.token)
-            } catch(exception) {
+            } catch (exception) {
                 context.commit('setErrors', exception.response.data.error)
             }
         },
@@ -47,11 +47,11 @@ export const AuthModule = {
         },
 
         async register(context, user) {
-            try { console.log(user) //eslint-disable-line
+            try {
                 const response = await authService.register(user)
-                context.commit('setRegisterErrors', {email: '', password: ''})
+                context.commit('setRegisterErrors', { email: '', password: '' })
                 return response
-            } catch(exception) {
+            } catch (exception) {
                 context.commit('setRegisterErrors', exception.response.data.errors)
             }
         }

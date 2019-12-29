@@ -8,7 +8,7 @@ export class HttpService {
             BASE_URL,
             {
                 accept: 'application/json',
-                Authorization: `Bearer ${ localStorage.getItem('token') }`
+                Authorization: `Bearer ${localStorage.getItem('token')}`
             }
         )
         this.axios = axios
